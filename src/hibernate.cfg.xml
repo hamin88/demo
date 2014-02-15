@@ -40,7 +40,8 @@
 
 		<!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">update</property>
-	    <mapping class="com.io.Status" />
+		    
+		<mapping class="com.io.Status" />
 		<mapping class="com.io.Role" />
 		<mapping class="com.io.User" />
 		<mapping class="com.io.Address" />
@@ -54,6 +55,6 @@
 		<mapping class="com.io.Tax" />
 		<mapping class="com.io.TaxType" />
 		<mapping class="com.io.Location" />
-	  	</session-factory>
+ 	 </session-factory>
 
 </hibernate-configuration>

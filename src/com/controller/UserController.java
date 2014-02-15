@@ -24,16 +24,26 @@ public class UserController {
 	@Autowired
 	private UserDAO userDAO;
 	 
-	@RequestMapping(value = "/getList", method = RequestMethod.POST)
+	@RequestMapping(value = "/getList")
 	public @ResponseBody
 	Map<String, Object> getList(@RequestParam Map<String, Object> params) {
 
 		Map<String, Object> data = new HashMap<String, Object>();
-		List<User> userList = userDAO.list();
-		data.put(UIErrorMessages.DATA, userList);
-		data.put(UIErrorMessages.TOTAL, userList != null ? userList.size() : 0);
-		data.put(UIErrorMessages.SUCCESS_KEY, UIErrorMessages.TRUE);
 
+		try{
+			
+			List<User> userList = userDAO.list();
+			data.put(UIErrorMessages.DATA, userList);
+			data.put(UIErrorMessages.TOTAL, userList != null ? userList.size() : 0);
+			data.put(UIErrorMessages.SUCCESS_KEY, UIErrorMessages.TRUE);
+
+		}catch(Exception e){
+
+			e.printStackTrace();
+			data.put(UIErrorMessages.SUCCESS_KEY, UIErrorMessages.FALSE);
+
+		}
+		
 		return data;
 	}
 

@@ -11,7 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
- 
+
+import org.springframework.stereotype.Component;
+
+@Component
 @Entity
 @Table(name="CONTACT")
 public class Contact implements Serializable{

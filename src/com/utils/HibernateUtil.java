@@ -2,11 +2,11 @@ package com.utils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
-import org.springframework.stereotype.Component;
 public class HibernateUtil {
- 
-	private static final SessionFactory sessionFactory = buildSessionFactory();
+  
+	private static  final SessionFactory sessionFactory = buildSessionFactory();
 	private static final HibernateTemplate hibernateTemplate =  new HibernateTemplate(sessionFactory,true);
  
 	public HibernateUtil(){

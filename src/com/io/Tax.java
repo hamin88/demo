@@ -10,7 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
- 
+
+import org.springframework.stereotype.Component;
+
+@Component 
 @Entity
 @Table(name="TAX")
 public class Tax implements Serializable{

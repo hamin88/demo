@@ -35,12 +35,17 @@ public class RoleController {
 	public @ResponseBody
 	Map<String, Object> getList(@RequestParam Map<String, Object> params) {
 		Map<String, Object> data = new HashMap<String, Object>();
-		List<Role> roleList = roleDAO.list();
-		data.put(UIErrorMessages.DATA, roleList);
-		data.put(UIErrorMessages.TOTAL, roleList != null ? roleList.size() : 0);
-		data.put(UIErrorMessages.SUCCESS_KEY, UIErrorMessages.TRUE);
+		
+		try{
 
-		return data;
+			List<Role> roleList = roleDAO.list();
+			data.put(UIErrorMessages.DATA, roleList);
+			data.put(UIErrorMessages.TOTAL, roleList != null ? roleList.size() : 0);
+			data.put(UIErrorMessages.SUCCESS_KEY, UIErrorMessages.TRUE);
+		}catch(Exception e){
+			data.put(UIErrorMessages.SUCCESS_KEY, UIErrorMessages.FALSE);
+		}
+				return data;
 	}
 
 	@RequestMapping(value = "/save/{id}")

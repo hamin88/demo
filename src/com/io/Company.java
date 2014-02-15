@@ -1,6 +1,7 @@
 package com.io;
 
 import javax.persistence.Transient;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -15,7 +16,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.apache.commons.lang.StringUtils;
- 
+import org.springframework.stereotype.Component;
+
+@Component
 @Entity
 @Table(name="COMPANY")
 public class Company implements Serializable{

@@ -5,7 +5,10 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
- 
+
+import org.springframework.stereotype.Component;
+
+@Component
 @Entity
 @Table(name="TAX_TYPE")
 public class TaxType implements Serializable{
