@@ -12,7 +12,7 @@
 			com.mysql.jdbc.Driver
 		</property>
 		<property name="connection.url">
-			jdbc:mysql://localhost:3306/naitikso_saksham
+			jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com:3306/naitikso_saksham
 		</property>
 		<property name="connection.username">naitikso_hamin</property>
 		<property name="connection.password">ha888min</property>
@@ -40,9 +40,7 @@
 
 		<!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">update</property>
-		<mapping package="com.io" />
-		 
-		 <!-- 
+		    
 		<mapping class="com.io.Status" />
 		<mapping class="com.io.Role" />
 		<mapping class="com.io.User" />
@@ -57,8 +55,6 @@
 		<mapping class="com.io.Tax" />
 		<mapping class="com.io.TaxType" />
 		<mapping class="com.io.Location" />
-		
-		  -->
-	 </session-factory>
+ 	 </session-factory>
 
 </hibernate-configuration>

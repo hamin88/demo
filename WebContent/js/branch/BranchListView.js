@@ -8,22 +8,22 @@ Ext.require([
     'Ext.selection.CheckboxModel'
 ]);
 
-Ext.define('Location', {
+Ext.define('Branch', {
     extend: 'Ext.data.Model',
-    fields: ['locationName', 'company.companyName','location.locationName'] 
-    
+    fields: ['branchName', 'city','state','country','email','website','gstNo','cstNo','company.companyName','status.statusName']
+
 });
 Ext.onReady(function() { 
 
 var store = Ext.create('Ext.data.Store', {
  	
-    model: 'Location',
-//    autoLoad: false,
+    model: 'Branch',
+    autoLoad: false,
     pageSize: 4,
     proxy: {
         type: 'ajax',
 	actionMethods :{create: 'POST', read: 'POST', update: 'POST', destroy: 'POST'},
-        url : '../location/getList',
+        url : '../branch/getList',
         reader: {
             type: 'json',
             root: 'data',
@@ -32,14 +32,14 @@ var store = Ext.create('Ext.data.Store', {
     }
 });
 Ext.create(Ext.grid.GridPanel, {
-title:'Location list',
-    renderTo:'locationView',
+title:'Branch list',
+    renderTo:'branchView',
     columns : [ {
-		header : "Location Name",
+		header : "Branch Name",
 
 		width : 120,
 		sortable : true,
-		dataIndex : 'locationName',
+		dataIndex : 'branchName',
 		align : 'left',
 
 		menuDisabled : true,
